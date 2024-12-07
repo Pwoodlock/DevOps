@@ -72,17 +72,14 @@ fi
 # Install Foreman installer
 sudo dnf -y install foreman-installer
 
-# Monitoring and logging packages as recommended by Foreman
-#
-
-
 
 # Run the Foreman installer with the options below. You can edit this line and populate as required. Please refer to the Documentation of 3.13
 sudo foreman-installer -v \
     --enable-foreman-plugin-proxmox \
     --enable-foreman-plugin-ansible \
     --enable-foreman-plugin-remote-execution \
-    --enable-foreman-proxy-plugin-remote-execution-script
+    --enable-foreman-proxy-plugin-remote-execution-script \
+    --enable-foreman-proxy-plugin-ansible
 
 #********************************************************************************************************************
 # Enable services after installation.  Uncomment the services you want to enable
